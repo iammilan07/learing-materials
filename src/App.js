@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { nanoid } from "nanoid";
+import ExpensePortfolio from "./ExpensePortfolio";
+import Header from "./Header";
 
-function App() {
+const App = () => {
+  const [list, setList] = useState([
+    {
+      id: nanoid(),
+      text: "new item",
+      price: 200,
+      date: "2/2/2023",
+    },
+    {
+      id: nanoid(),
+      text: "samasung ",
+      price: 200,
+      date: "2/2/2023",
+    },
+    {
+      id: nanoid(),
+      text: "iphone",
+      price: 2000,
+      date: "2/2/2023",
+    },
+    {
+      id: nanoid(),
+      text: "oneplus",
+      price: 33300,
+      date: "2/2/2023",
+    },
+  ]);
+
+  const addInfo = (text, price) => {
+    const currDate = new Date().toLocaleTimeString();
+    const newDatea = {
+      id: nanoid(),
+      text: text,
+      price: price,
+      date: currDate,
+    };
+    const newDatas = [...list, newDatea];
+    setList(newDatas);
+  };
+  const deleteNote = (id) => {
+    const newList = list.filter((note) => note.id !== id);
+    setList(newList);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    <Header/>
+      <div className="portfolio-class">
+        <ExpensePortfolio
+          lists={list}
+          handleAddInfo={addInfo}
+          handleDeleteList={deleteNote}
+        />
+      </div>
+    </React.Fragment>
   );
-}
+};
 
 export default App;

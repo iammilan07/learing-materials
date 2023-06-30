@@ -1,13 +1,138 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    
+
+}
+h1{
+    height: 12vh;
+    padding-top: 5px;
+    width: 100vw;
+    font-size: xxx-large;
+
+}
+.main-container{
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto; 
+    padding-left: 40px;
+    padding-right: 15px;
+    margin-top: 12px;
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+    margin: 10px;
+    background-color: #fef68a;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-height: 170px;
+    width: 20vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.listitems{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit,400px);
+}
+textarea{
+    resize: none;
+    width: 18vw;
+    height: 12vh;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    color: black;
+    padding-left: 10px;
+    border-radius: 10px;
+    justify-content: space-around;
+    white-space: pre-wrap;
+    background-color: rgba(0, 147, 255, 0.26);
+
+}
+input{
+    margin-top: 3vh;
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background: rgba(84, 56, 88, 0.11);
+    padding-left: 10px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer button{
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.footer small{
+    margin-left: 0 ;
+    text-decoration: underline;
+}
+
+.save:hover{
+    background-color: rgb(52, 214, 52);
+    color: white;
+}
+.delete:hover{
+    background-color: red;
+    color: white
+}
+
+
+.input-container{
+    width: 20vw;
+    margin-top: 20px;
+    background-color: #fef68a;
+    margin-left: 50px;
+    border-radius: 10px;
+    min-height: 130px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: pre-wrap;
+
+}
+.savesave{
+    margin-left: 235px;
+    background-color: #fff;
+    float: right;
+}
+.savesave:hover{
+    background-color: rgb(52, 214, 52);
+    color: white;
+}
+.textOnly{
+    text-transform: capitalize;
+    text-decoration: none;
+    background-color: #fef68a;
+    width: 250px;
+    height:10vh;
+    text-align: justify;
+    white-space: pre-wrap;
+    font-size: 20px;
+
+}
+
+.priceOnly{
+    width: 10vw;
+    height: 5vh;
+    color: darkmagenta;
 }
